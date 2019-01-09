@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+
+    
+    <!-- <record id="lab_erp.view_products" model="ir.ui.view">
+        <field name='name'>product manager</field>
+        <field name='model'>lab_erp.product</field>
+        <field name='arch' type='xml'>
+          <tree>
+            <field name='name'/>
+            <field name='detail'/>
+            <field name='origin'/>
+          </tree>
+        </field>
+    </record> -->
+
+    <record model="ir.actions.act_window" id="lab_erp.action_products">
+      <field name="name">Product Manager</field>
+      <field name="res_model">lab_erp.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- <record id="lab_erp.view_posts_manager" model="ir.ui.view">
+        <field name='name'>posts manager</field>
+        <field name='model'>lab_erp.post_product</field>
+        <field name='arch' type='xml'>
+          <tree>
+            <field name='product'/>
+            <field name='quantity'/>
+            <field name='created'/>
+          </tree>
+        </field>
+    </record> -->
+
+
+    <record model="ir.actions.act_window" id="lab_erp.action_posts_manager">
+      <field name="name">Posts Manager</field>
+      <field name="res_model">lab_erp.post_product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- <record id="lab_erp.view_category" model="ir.ui.view">
+        <field name='name'>category manager</field>
+        <field name='model'>lab_erp.category</field>
+        <field name='arch' type='xml'>
+          <tree>
+            <field name='name'/>
+            <field name='quantity'/>
+            <field name='is_active'/>
+          </tree>
+        </field>
+    </record> -->
+
+
+    <record model="ir.actions.act_window" id="lab_erp.action_category">
+      <field name="name">Category Manager</field>
+      <field name="res_model">lab_erp.category</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <record id='lab_erp.action_orders' model='ir.ui.view'>
+      <field name='name'>orders</field>
+      <field name='model'>lab_erp.order</field>
+      <filed name='arch' type='xml'>
+        <field name='customer'/>
+      </filed>
+    </record>
+    
+    <record id='lab_erp.action_users_manager' model='ir.ui.view'>
+      <field name='name'>users manager</field>
+      <field name='model'>lab_erp.account</field>
+      <filed name='arch' type='xml'>
+        <field name='name'/>
+        <field name='dislay_name'/>
+      </filed>
+    </record>
+     -->
+
+    <menuitem name='Merchant' id='lab_erp.menu_root' />
+    
+    <menuitem name="Posts Manager" id='lab_erp.posts_manager' parent='lab_erp.menu_root'
+            action='lab_erp.action_posts_manager' />
+
+    <menuitem name="Products Manager" id='lab_erp.products_manager' parent='lab_erp.menu_root'/>
+    <menuitem name="Products" id='lab_erp.products' parent='lab_erp.products_manager'
+              action='lab_erp.action_products'/>
+    <menuitem name='Category' id='lab_erp.category' parent='lab_erp.products_manager'
+              action='lab_erp.action_category'/>
+
+
+    <!-- <menuitem name='Storage' id='lab_erp.storage' parent='lab_erp.menu_root'/>
+    <menuitem name='Orders' id='lab_erp.orders' parent='lab_erp.storage'
+            action='lab_erp.action_orders' />
+    <menuitem name='Users Manager' id='lab_erp.users_manager' parent='lab_erp.menu_root'
+            action='lab_erp.action_users_manager' /> -->
+
+  </data>
+</odoo>
